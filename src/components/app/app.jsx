@@ -63,6 +63,10 @@ class App extends PureComponent {
     return null;
   }
 
+  _answerSubmitHandler() {
+
+  }
+
   render() {
     const {questions} = this.props;
 
@@ -75,13 +79,13 @@ class App extends PureComponent {
           <Route exact path="/artist">
             <ArtistQuestionScreen
               question={questions[1]}
-              onAnswer={() => {}}
+              onAnswer={this._answerSubmitHandler}
             />
           </Route>
           <Route exact path="/genre">
             <GenreQuestionScreen
               question={questions[0]}
-              onAnswer={() => {}}
+              onAnswer={this._answerSubmitHandler}
             />
           </Route>
         </Switch>
