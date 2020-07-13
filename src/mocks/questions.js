@@ -33,7 +33,7 @@ const questions = [
       picture: `${AVATAR_URL}/${Math.random()}`,
       artist: `Jim Beam`,
     }],
-  }
+  },
 ];
 
 export {questions as default};
