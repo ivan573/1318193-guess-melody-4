@@ -1,7 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import AudioPlayer from './audio-player.jsx';
+import Player from "../../components/audio-player/audio-player.jsx";
+import withAudio from "../../hocs/with-audio/with-audio.js";
+
+const AudioPlayer = withAudio(Player);
 
 const mock = {
   song: {
@@ -14,9 +17,12 @@ it(`AudioPlayer is rendered correctly`, () => {
 
   const tree = renderer.create(<AudioPlayer
     isPlaying={false}
+    isLoading={true}
     src={song.src}
     onPlayButtonClick={() => {}}
-  />, {
+  >
+    <audio />
+  </AudioPlayer>, {
     createNodeMock: () => {
       return {};
     }
